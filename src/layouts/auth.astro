@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/src/styles/global.css">
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="h-screen w-screen bg-[#002F53] flex">
+			<img src="/public/loginSvg.svg" alt="" class="fixed h-[40vh] bottom-4 left-[10vw]">
+			<div class="h-screen w-[20%] px-8">
+				<h2 class="mt-[16vh] text-[2.3vw] font-semibold text-white">Sky<span class="text-[#FFC107]">Bidder</span></h2>
+				<p class="text-white text-[1.3vw]">A freelance bidding automation tool for freelancers!</p>
+			</div>
+			<div class="bg-white h-screen w-[80%] rounded-l-3xl">
+				<slot />
+			</div>
+		</div>
+	</body>
+</html>
